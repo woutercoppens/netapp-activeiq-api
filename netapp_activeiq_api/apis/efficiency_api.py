@@ -60,7 +60,7 @@ class EfficiencyApi:
             body=body_params,
         )
 
-    def get_efficiency_summary_v2(self, **kwargs):  # noqa: E501
+    def get_efficiency_summary(self, **kwargs):  # noqa: E501
         """Provides details about the systems with maximum capacity savings for a customer, site, group, or a set of serial numbers.  # noqa: E501
 
         Provides details about the storage efficiency of the systems for a customer, site, group, or a set of serial numbers. The results are provided in a paginated manner.  # noqa: E501
@@ -88,7 +88,7 @@ class EfficiencyApi:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_efficiency_summary_v2" % key
+                    " to method get_efficiency_summary" % key
                 )
             params[key] = val
         del params["kwargs"]

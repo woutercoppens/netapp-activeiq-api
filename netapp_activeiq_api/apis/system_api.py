@@ -237,7 +237,7 @@ class SystemApi:
             body=body_params,
         )
 
-    def v2_system_summary_level_level_id_id_get(
+    def get_system_summary_by_level(
         self, id, level, **kwargs
     ):  # noqa: E501
         """Provides the number of products for a customer, site, group, or a set of serial numbers.  # noqa: E501
@@ -254,19 +254,19 @@ class SystemApi:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method v2_system_summary_level_level_id_id_get" % key
+                    " to method get_system_summary_by_level" % key
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter 'id' is set
         if "id" not in params or params["id"] is None:
             raise ValueError(
-                "Missing the required parameter `id` when calling `v2_system_summary_level_level_id_id_get`"
+                "Missing the required parameter `id` when calling `get_system_summary_by_level`"
             )  # noqa: E501
         # verify the required parameter 'level' is set
         if "level" not in params or params["level"] is None:
             raise ValueError(
-                "Missing the required parameter `level` when calling `v2_system_summary_level_level_id_id_get`"
+                "Missing the required parameter `level` when calling `get_system_summary_by_level`"
             )  # noqa: E501
 
         path_params = {}

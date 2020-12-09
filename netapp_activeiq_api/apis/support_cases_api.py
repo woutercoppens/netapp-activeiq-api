@@ -10,7 +10,7 @@ class SupportCasesApi:
             api_client = ApiClient()
         self.api_client = api_client
 
-    def v1_support_cases_level_id_get(self, level, id, **kwargs):  # noqa: E501
+    def get_support_cases_by_id(self, level, id, **kwargs):  # noqa: E501
         """Provides the information about open support cases for a customer, site, group or set of serial_numbers.  # noqa: E501
 
         This API returns key parameters related to each active support case. Requested data set can be for a customer, site, group, or set of serial numbers. Please note that the data received through this interface may lag up to 24 hours from the source application for Support Cases.   # noqa: E501
@@ -27,19 +27,19 @@ class SupportCasesApi:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method v1_support_cases_level_id_get" % key
+                    " to method get_support_cases_by_id" % key
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter 'level' is set
         if "level" not in params or params["level"] is None:
             raise ValueError(
-                "Missing the required parameter `level` when calling `v1_support_cases_level_id_get`"
+                "Missing the required parameter `level` when calling `get_support_cases_by_id`"
             )  # noqa: E501
         # verify the required parameter 'id' is set
         if "id" not in params or params["id"] is None:
             raise ValueError(
-                "Missing the required parameter `id` when calling `v1_support_cases_level_id_get`"
+                "Missing the required parameter `id` when calling `get_support_cases_by_id`"
             )  # noqa: E501
 
         path_params = {}
@@ -67,7 +67,7 @@ class SupportCasesApi:
             body=body_params,
         )
 
-    def v1_support_rma_level_id_get(self, level, id, **kwargs):  # noqa: E501
+    def get_support_rma_by_id(self, level, id, **kwargs):  # noqa: E501
         """Provides information about RMA cases for a customer, site, group, or set of serial_numbers.  # noqa: E501
 
         Provides information about RMA cases for a customer, site, group, or set of serial_numbers.   # noqa: E501
@@ -84,19 +84,19 @@ class SupportCasesApi:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method v1_support_rma_level_id_get" % key
+                    " to method get_support_rma_by_id" % key
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter 'level' is set
         if "level" not in params or params["level"] is None:
             raise ValueError(
-                "Missing the required parameter `level` when calling `v1_support_rma_level_id_get`"
+                "Missing the required parameter `level` when calling `get_support_rma_by_id`"
             )  # noqa: E501
         # verify the required parameter 'id' is set
         if "id" not in params or params["id"] is None:
             raise ValueError(
-                "Missing the required parameter `id` when calling `v1_support_rma_level_id_get`"
+                "Missing the required parameter `id` when calling `get_support_rma_by_id`"
             )  # noqa: E501
 
         path_params = {}

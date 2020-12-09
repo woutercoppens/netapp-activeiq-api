@@ -9,7 +9,7 @@ class CapacityApi:
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_capacity_details_by_level_v2(self, id, level, **kwargs):  # noqa: E501
+    def get_capacity_details_by_level(self, id, level, **kwargs):  # noqa: E501
         """Provides the details about the systems nearing allocated capacity limit for a customer, site, group, cluster, watchlist or a set of serial numbers.   # noqa: E501
         Lists information about systems for a customer, site, group, cluster, watchlist or serial numbers that have exceeded 90 percent system capacity or are predicted to do so soon.  Systems are grouped into the following categories: currently above 90 percent, expected to exceed 90 percent within 1 month, expected to exceed 90 percent within 3 months, expected to exceed 90 percent within 6 months, not expected to exceed 90 percent within 6 months.   # noqa: E501
 
@@ -24,19 +24,19 @@ class CapacityApi:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_capacity_details_by_level_v2" % key
+                    " to method get_capacity_details_by_level" % key
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter 'id' is set
         if "id" not in params or params["id"] is None:
             raise ValueError(
-                "Missing the required parameter `id` when calling `get_capacity_details_by_level_v2`"
+                "Missing the required parameter `id` when calling `get_capacity_details_by_level`"
             )  # noqa: E501
         # verify the required parameter 'level' is set
         if "level" not in params or params["level"] is None:
             raise ValueError(
-                "Missing the required parameter `level` when calling `get_capacity_details_by_level_v2`"
+                "Missing the required parameter `level` when calling `get_capacity_details_by_level`"
             )  # noqa: E501
 
         path_params = {}
@@ -60,7 +60,7 @@ class CapacityApi:
             body=body_params,
         )
 
-    def get_capacity_summary_by_level_v2(self, id, level, **kwargs):  # noqa: E501
+    def get_capacity_summary_by_level(self, id, level, **kwargs):  # noqa: E501
         """Provides the number of systems nearing allocated capacity limit for a customer, site, group, cluster watchlist or a set of serial numbers.  # noqa: E501
         Lists the number of systems for a customer, site, group, cluster, watchlist or a set of serial numbers that have exceeded 90 percent system capacity or are predicted to do so soon.  Counts are provided for the following categories: currently above 90 percent, expected to exceed 90 percent within 1 month, expected to exceed 90 percent within 3 months, expected to exceed 90 percent within 6 months, sum of systems which are above 90 percent and expected to exceed 90 percent in 6 months, not expected to exceed 90 percent within 6 months.   # noqa: E501
 
@@ -75,19 +75,19 @@ class CapacityApi:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_capacity_summary_by_level_v2" % key
+                    " to method get_capacity_summary_by_level" % key
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter 'id' is set
         if "id" not in params or params["id"] is None:
             raise ValueError(
-                "Missing the required parameter `id` when calling `get_capacity_summary_by_level_v2`"
+                "Missing the required parameter `id` when calling `get_capacity_summary_by_level`"
             )  # noqa: E501
         # verify the required parameter 'level' is set
         if "level" not in params or params["level"] is None:
             raise ValueError(
-                "Missing the required parameter `level` when calling `get_capacity_summary_by_level_v2`"
+                "Missing the required parameter `level` when calling `get_capacity_summary_by_level`"
             )  # noqa: E501
 
         path_params = {}

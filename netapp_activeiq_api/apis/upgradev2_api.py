@@ -214,7 +214,7 @@ class Upgradev2Api:
             body=body_params,
         )
 
-    def v1_upgrades2_advisor_level_level_id_id_ontap_ontap_get(
+    def get_upgrade_advisor_by_ontap_id(
         self, id, level, ontap, **kwargs
     ):  # noqa: E501
         """Provides the risk summary for a specific ONTAP ID.  # noqa: E501
@@ -232,7 +232,7 @@ class Upgradev2Api:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method v1_upgrades2_advisor_level_level_id_id_ontap_ontap_get"
+                    " to method get_upgrades2_advisor_level_level_id_id_ontap_ontap_get"
                     % key
                 )
             params[key] = val
@@ -240,17 +240,17 @@ class Upgradev2Api:
         # verify the required parameter 'id' is set
         if "id" not in params or params["id"] is None:
             raise ValueError(
-                "Missing the required parameter `id` when calling `v1_upgrades2_advisor_level_level_id_id_ontap_ontap_get`"
+                "Missing the required parameter `id` when calling `get_upgrade_advisor_by_ontap_id`"
             )  # noqa: E501
         # verify the required parameter 'level' is set
         if "level" not in params or params["level"] is None:
             raise ValueError(
-                "Missing the required parameter `level` when calling `v1_upgrades2_advisor_level_level_id_id_ontap_ontap_get`"
+                "Missing the required parameter `level` when calling `get_upgrade_advisor_by_ontap_id`"
             )  # noqa: E501
         # verify the required parameter 'ontap' is set
         if "ontap" not in params or params["ontap"] is None:
             raise ValueError(
-                "Missing the required parameter `ontap` when calling `v1_upgrades2_advisor_level_level_id_id_ontap_ontap_get`"
+                "Missing the required parameter `ontap` when calling `get_upgrade_advisor_by_ontap_id`"
             )  # noqa: E501
 
         path_params = {}

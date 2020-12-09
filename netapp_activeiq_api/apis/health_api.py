@@ -137,7 +137,7 @@ class HealthApi:
             body=body_params,
         )
 
-    def v1_health_summary_level_level_id_id_get(
+    def get_health_summary_by_level(
         self, id, level, **kwargs
     ):  # noqa: E501
         """Provides the number of risks for a customer, site, group, or a set of serial numbers.  # noqa: E501
@@ -154,19 +154,19 @@ class HealthApi:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method v1_health_summary_level_level_id_id_get" % key
+                    " to method get_health_summary_by_level" % key
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter 'id' is set
         if "id" not in params or params["id"] is None:
             raise ValueError(
-                "Missing the required parameter `id` when calling `v1_health_summary_level_level_id_id_get`"
+                "Missing the required parameter `id` when calling `get_health_summary_by_level`"
             )  # noqa: E501
         # verify the required parameter 'level' is set
         if "level" not in params or params["level"] is None:
             raise ValueError(
-                "Missing the required parameter `level` when calling `v1_health_summary_level_level_id_id_get`"
+                "Missing the required parameter `level` when calling `get_health_summary_by_level`"
             )  # noqa: E501
 
         path_params = {}

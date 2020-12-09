@@ -9,7 +9,7 @@ class ValueReportApi:
             api_client = ApiClient()
         self.api_client = api_client
 
-    def v1_value_report_summary_level_level_get(
+    def get_value_report_summary_by_level(
         self, level, serialno, **kwargs
     ):  # noqa: E501
         """Provides the aggregated value report details for set of serial numbers.  # noqa: E501
@@ -26,19 +26,19 @@ class ValueReportApi:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method v1_value_report_summary_level_level_get" % key
+                    " to method get_value_report_summary_by_level" % key
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter 'level' is set
         if "level" not in params or params["level"] is None:
             raise ValueError(
-                "Missing the required parameter `level` when calling `v1_value_report_summary_level_level_get`"
+                "Missing the required parameter `level` when calling `get_value_report_summary_by_level`"
             )  # noqa: E501
         # verify the required parameter 'serialno' is set
         if "serialno" not in params or params["serialno"] is None:
             raise ValueError(
-                "Missing the required parameter `serialno` when calling `v1_value_report_summary_level_level_get`"
+                "Missing the required parameter `serialno` when calling `get_value_report_summary_by_level`"
             )  # noqa: E501
 
         path_params = {}
@@ -62,7 +62,7 @@ class ValueReportApi:
             body=body_params,
         )
 
-    def v1_value_report_summary_level_level_id_id_get(
+    def get_value_report_summary_by_id(
         self, level, id, **kwargs
     ):  # noqa: E501
         """Provides the aggregated value report details for a customer, site, group, cluster or serial number.  # noqa: E501
@@ -79,19 +79,19 @@ class ValueReportApi:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method v1_value_report_summary_level_level_id_id_get" % key
+                    " to method get_value_report_summary_by_id" % key
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter 'level' is set
         if "level" not in params or params["level"] is None:
             raise ValueError(
-                "Missing the required parameter `level` when calling `v1_value_report_summary_level_level_id_id_get`"
+                "Missing the required parameter `level` when calling `get_value_report_summary_by_id`"
             )  # noqa: E501
         # verify the required parameter 'id' is set
         if "id" not in params or params["id"] is None:
             raise ValueError(
-                "Missing the required parameter `id` when calling `v1_value_report_summary_level_level_id_id_get`"
+                "Missing the required parameter `id` when calling `get_value_report_summary_by_id`"
             )  # noqa: E501
 
         path_params = {}

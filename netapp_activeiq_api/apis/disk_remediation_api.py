@@ -8,7 +8,7 @@ class DiskRemediationApi:
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_firmware_count_api(
+    def get_firmware_count(
         self, context, search_id, search_type, **kwargs
     ):  # noqa: E501
         """Returns the ONTAP system count and details for disk/shelf/sp firmware upgrades.  # noqa: E501
@@ -26,24 +26,24 @@ class DiskRemediationApi:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_firmware_count_api" % key
+                    " to method get_firmware_count" % key
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter 'context' is set
         if "context" not in params or params["context"] is None:
             raise ValueError(
-                "Missing the required parameter `context` when calling `get_firmware_count_api`"
+                "Missing the required parameter `context` when calling `get_firmware_count`"
             )  # noqa: E501
         # verify the required parameter 'search_id' is set
         if "search_id" not in params or params["search_id"] is None:
             raise ValueError(
-                "Missing the required parameter `search_id` when calling `get_firmware_count_api`"
+                "Missing the required parameter `search_id` when calling `get_firmware_count`"
             )  # noqa: E501
         # verify the required parameter 'search_type' is set
         if "search_type" not in params or params["search_type"] is None:
             raise ValueError(
-                "Missing the required parameter `search_type` when calling `get_firmware_count_api`"
+                "Missing the required parameter `search_type` when calling `get_firmware_count`"
             )  # noqa: E501
 
         path_params = {}
@@ -69,7 +69,7 @@ class DiskRemediationApi:
             body=body_params,
         )
 
-    def get_firmware_details_api(
+    def get_firmware_details(
         self, context, search_id, search_type, **kwargs
     ):  # noqa: E501
         """Returns the MySupport URLs and URL count for firmware upgrade files.  # noqa: E501
@@ -87,19 +87,19 @@ class DiskRemediationApi:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_firmware_details_api" % key
+                    " to method get_firmware_details" % key
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter 'context' is set
         if "context" not in params or params["context"] is None:
             raise ValueError(
-                "Missing the required parameter `context` when calling `get_firmware_details_api`"
+                "Missing the required parameter `context` when calling `get_firmware_details`"
             )  # noqa: E501
         # verify the required parameter 'search_id' is set
         if "search_id" not in params or params["search_id"] is None:
             raise ValueError(
-                "Missing the required parameter `search_id` when calling `get_firmware_details_api`"
+                "Missing the required parameter `search_id` when calling `get_firmware_details`"
             )  # noqa: E501
         # verify the required parameter 'search_type' is set
         if "search_type" not in params or params["search_type"] is None:
@@ -130,7 +130,7 @@ class DiskRemediationApi:
             body=body_params,
         )
 
-    def get_firmware_details_risk_api(
+    def get_firmware_details_risk(
         self, context, search_id, burt_id, search_type, **kwargs
     ):  # noqa: E501
         """Returns the MySupport URLs and URL count for firmware upgrade files at burt level.  # noqa: E501
@@ -149,29 +149,29 @@ class DiskRemediationApi:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_firmware_details_risk_api" % key
+                    " to method get_firmware_details_risk" % key
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter 'context' is set
         if "context" not in params or params["context"] is None:
             raise ValueError(
-                "Missing the required parameter `context` when calling `get_firmware_details_risk_api`"
+                "Missing the required parameter `context` when calling `get_firmware_details_risk`"
             )  # noqa: E501
         # verify the required parameter 'search_id' is set
         if "search_id" not in params or params["search_id"] is None:
             raise ValueError(
-                "Missing the required parameter `search_id` when calling `get_firmware_details_risk_api`"
+                "Missing the required parameter `search_id` when calling `get_firmware_details_risk`"
             )  # noqa: E501
         # verify the required parameter 'burt_id' is set
         if "burt_id" not in params or params["burt_id"] is None:
             raise ValueError(
-                "Missing the required parameter `burt_id` when calling `get_firmware_details_risk_api`"
+                "Missing the required parameter `burt_id` when calling `get_firmware_details_risk`"
             )  # noqa: E501
         # verify the required parameter 'search_type' is set
         if "search_type" not in params or params["search_type"] is None:
             raise ValueError(
-                "Missing the required parameter `search_type` when calling `get_firmware_details_risk_api`"
+                "Missing the required parameter `search_type` when calling `get_firmware_details_risk`"
             )  # noqa: E501
 
         path_params = {}
@@ -199,7 +199,7 @@ class DiskRemediationApi:
             body=body_params,
         )
 
-    def get_inventory_api(
+    def get_inventory(
         self, context, search_id, search_type, **kwargs
     ):  # noqa: E501
         """Provides inventory and playbook zip file to remediate disk/shelf/sp firmware risks.  # noqa: E501
@@ -217,24 +217,24 @@ class DiskRemediationApi:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_inventory_api" % key
+                    " to method get_inventory" % key
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter 'context' is set
         if "context" not in params or params["context"] is None:
             raise ValueError(
-                "Missing the required parameter `context` when calling `get_inventory_api`"
+                "Missing the required parameter `context` when calling `get_inventory`"
             )  # noqa: E501
         # verify the required parameter 'search_id' is set
         if "search_id" not in params or params["search_id"] is None:
             raise ValueError(
-                "Missing the required parameter `search_id` when calling `get_inventory_api`"
+                "Missing the required parameter `search_id` when calling `get_inventory`"
             )  # noqa: E501
         # verify the required parameter 'search_type' is set
         if "search_type" not in params or params["search_type"] is None:
             raise ValueError(
-                "Missing the required parameter `search_type` when calling `get_inventory_api`"
+                "Missing the required parameter `search_type` when calling `get_inventory`"
             )  # noqa: E501
 
         path_params = {}
@@ -260,7 +260,7 @@ class DiskRemediationApi:
             body=body_params,
         )
 
-    def get_inventory_post_api(self, request_body, **kwargs):  # noqa: E501
+    def get_inventory_post(self, request_body, **kwargs):  # noqa: E501
         """Provides inventory and playbook zip file from a pre-defined inventory output.  # noqa: E501
 
         Returns the zip file containing inventory and playbook files for ONTAP Firmware Upgrades.   # noqa: E501
@@ -275,14 +275,14 @@ class DiskRemediationApi:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_inventory_post_api" % key
+                    " to method get_inventory_post" % key
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter 'request_body' is set
         if "request_body" not in params or params["request_body"] is None:
             raise ValueError(
-                "Missing the required parameter `request_body` when calling `get_inventory_post_api`"
+                "Missing the required parameter `request_body` when calling `get_inventory_post`"
             )  # noqa: E501
 
         path_params = {}
@@ -307,7 +307,7 @@ class DiskRemediationApi:
             body=body_params,
         )
 
-    def get_inventory_risk_api(
+    def get_inventory_risk(
         self, context, search_id, burt_id, search_type, **kwargs
     ):  # noqa: E501
         """Provides inventory and playbook zip file to remediate disk/shelf/sp firmware risks at burt level.  # noqa: E501
@@ -326,29 +326,29 @@ class DiskRemediationApi:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_inventory_risk_api" % key
+                    " to method get_inventory_risk" % key
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter 'context' is set
         if "context" not in params or params["context"] is None:
             raise ValueError(
-                "Missing the required parameter `context` when calling `get_inventory_risk_api`"
+                "Missing the required parameter `context` when calling `get_inventory_risk`"
             )  # noqa: E501
         # verify the required parameter 'search_id' is set
         if "search_id" not in params or params["search_id"] is None:
             raise ValueError(
-                "Missing the required parameter `search_id` when calling `get_inventory_risk_api`"
+                "Missing the required parameter `search_id` when calling `get_inventory_risk`"
             )  # noqa: E501
         # verify the required parameter 'burt_id' is set
         if "burt_id" not in params or params["burt_id"] is None:
             raise ValueError(
-                "Missing the required parameter `burt_id` when calling `get_inventory_risk_api`"
+                "Missing the required parameter `burt_id` when calling `get_inventory_risk`"
             )  # noqa: E501
         # verify the required parameter 'search_type' is set
         if "search_type" not in params or params["search_type"] is None:
             raise ValueError(
-                "Missing the required parameter `search_type` when calling `get_inventory_risk_api`"
+                "Missing the required parameter `search_type` when calling `get_inventory_risk`"
             )  # noqa: E501
 
         path_params = {}
@@ -376,7 +376,7 @@ class DiskRemediationApi:
             body=body_params,
         )
 
-    def get_playbook_api(self, search_type, **kwargs):  # noqa: E501
+    def get_playbook(self, search_type, **kwargs):  # noqa: E501
         """Provides playbook files for disk/shelf/SP firmware upgrades  # noqa: E501
 
         Returns playbook YAML file for ONTAP Firmware Upgrades.   # noqa: E501
@@ -390,14 +390,14 @@ class DiskRemediationApi:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_playbook_api" % key
+                    " to method get_playbook" % key
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter 'search_type' is set
         if "search_type" not in params or params["search_type"] is None:
             raise ValueError(
-                "Missing the required parameter `search_type` when calling `get_playbook_api`"
+                "Missing the required parameter `search_type` when calling `get_playbook`"
             )  # noqa: E501
 
         path_params = {}
