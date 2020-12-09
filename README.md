@@ -22,7 +22,7 @@ pip install git+https://github.com/woutercoppens/netapp-activeiq-api.git
 
 Then import the package:
 ```python
-import netapp-activeiq-api 
+import netapp_activeiq_api 
 ```
 
 ### Setuptools
@@ -182,7 +182,3 @@ Class | Method | HTTP request | Description
 - **Type**: API key
 - **API key parameter name**: AuthorizationToken
 - **Location**: HTTP header
-
-## Author
-
-
