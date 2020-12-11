@@ -7,7 +7,7 @@
 
 [![Proact Belgium](https://proact.eu/wp-content/uploads/2020/03/proact-logo.png)](https://proact.eu) 
 
-Building and improving this Ansible role have been sponsored by my employer **Proact Belgium**.
+Building and improving this package have been sponsored by my employer **Proact Belgium**.
 
 ## Requirements.
 
