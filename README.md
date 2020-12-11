@@ -1,13 +1,13 @@
 # netapp-activeiq-api-swagger
 
+- API version: v1 en v2
+- Package version: 0.0.1
+
 ## Sponsor 
 
 [![Proact Belgium](https://proact.eu/wp-content/uploads/2020/03/proact-logo.png)](https://proact.eu) 
 
 Building and improving this Ansible role have been sponsored by my employer **Proact Belgium**.
-
-- API version: v1 en v2
-- Package version: 0.0.1
 
 ## Requirements.
 
