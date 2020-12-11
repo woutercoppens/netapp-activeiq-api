@@ -137,9 +137,7 @@ class HealthApi:
             body=body_params,
         )
 
-    def get_health_summary_by_level(
-        self, id, level, **kwargs
-    ):  # noqa: E501
+    def get_health_summary_by_level(self, id, level, **kwargs):  # noqa: E501
         """Provides the number of risks for a customer, site, group, or a set of serial numbers.  # noqa: E501
 
         Provides the number of risks for each severity level (high, medium, and low) for a customer, site, group, or a set of serial numbers.   # noqa: E501

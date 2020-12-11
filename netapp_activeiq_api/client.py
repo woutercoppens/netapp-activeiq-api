@@ -26,7 +26,6 @@ from .apis import (
     DataAvailabilityApi,
     DatacenterInsightsApi,
     DiskRemediationApi,
-    EfficiencyApi,
     HealthApi,
     InteropSummaryCountApi,
     InteropSummaryDetailsApi,
@@ -67,7 +66,7 @@ class ActiveIQClient:
         "object": object,
     }
 
-    def __init__(self, refresh_token, access_token = None):
+    def __init__(self, refresh_token, access_token=None):
         self._base_url = "https://api.activeiq.netapp.com"
 
         self.cookie = None
@@ -112,10 +111,6 @@ class ActiveIQClient:
     @cached_property
     def DiskRemediationApi(self):
         return DiskRemediationApi(self)
-
-    @cached_property
-    def EfficiencyApi(self):
-        return EfficiencyApi(self)
 
     @cached_property
     def HealthApi(self):
@@ -192,7 +187,7 @@ class ActiveIQClient:
     @cached_property
     def Upgradev2Api(self):
         return Upgradev2Api(self)
-  
+
     def get_refresh_token(self):
         """Manual refresh."""
         refresh_url = self._url("v1/tokens/accessToken")
@@ -226,7 +221,7 @@ class ActiveIQClient:
             json_response = response.json()
             logging.debug(json_response)
             if "access_token" in json_response:
-                self.access_token= json_response.get("access_token")
+                self.access_token = json_response.get("access_token")
                 logging.debug("Obtained access_token %s.", self.access_token)
 
             if "refresh_token" in json_response:
@@ -306,7 +301,12 @@ class ActiveIQClient:
         header_params=None,
         post_params=None,
         body=None,
+        recursive=3,
     ):
+        """
+        Added the recusive parameter because sometimes a request gives a httperror 500 'internal server error). Requesting again mostly solves the problem.
+        The recursive parameter is to prevent indefinitive recursive loops.
+        """
         try:
             response = self._raw_request(
                 url,
@@ -320,6 +320,7 @@ class ActiveIQClient:
 
         except requests.exceptions.HTTPError:
             if response.status_code == 401:
+                # unauthorized access, requesting a new access_token and refresh_token
                 self.get_refresh_token()
                 response = self.request(
                     url,
@@ -329,6 +330,21 @@ class ActiveIQClient:
                     post_params=post_params,
                     body=body,
                 )
+            elif response.status_code == 500:
+                # Internal server error, try again.
+                if recursive > 0:
+                    response = self.request(
+                        url,
+                        method,
+                        query_params=query_params,
+                        header_params=header_params,
+                        post_params=post_params,
+                        body=body,
+                        recursive=recursive - 1,
+                    )
+                else:
+                    raise requests.exceptions.HTTPError
+                    exit
             else:
                 raise requests.exceptions.HTTPError
                 exit

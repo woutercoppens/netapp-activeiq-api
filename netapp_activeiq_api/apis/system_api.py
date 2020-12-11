@@ -237,9 +237,7 @@ class SystemApi:
             body=body_params,
         )
 
-    def get_system_summary_by_level(
-        self, id, level, **kwargs
-    ):  # noqa: E501
+    def get_system_summary_by_level(self, id, level, **kwargs):  # noqa: E501
         """Provides the number of products for a customer, site, group, or a set of serial numbers.  # noqa: E501
 
         Provides the number of ONTAP, E-Series, AltaVault, StorageGrid, SolidFire, other systems, sites, and clusters for a customer, site, group, or a set of serial numbers.  # noqa: E501

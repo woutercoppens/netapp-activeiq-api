@@ -16,5 +16,5 @@ if __name__ == "__main__":
 
     # aiq.get_refresh_token()
 
-    ca = aiq.SystemApi.get_list_by_level('customer')
+    ca = aiq.SystemApi.get_list_by_level("customer")
     pprint(ca)

@@ -62,9 +62,7 @@ class ValueReportApi:
             body=body_params,
         )
 
-    def get_value_report_summary_by_id(
-        self, level, id, **kwargs
-    ):  # noqa: E501
+    def get_value_report_summary_by_id(self, level, id, **kwargs):  # noqa: E501
         """Provides the aggregated value report details for a customer, site, group, cluster or serial number.  # noqa: E501
 
         Total aggregated value report count for a customer, site, group, watchlist, cluster or serial numbers . Counts are provided for the following categories: software upgrades count, performance risk count, autocases count, unique applications count, contract renewal expriy days, storage efficiency savings, configuration risk count, capacity risk count, security risk count, protection risk count, risk checked count, risk mitigated count   # noqa: E501

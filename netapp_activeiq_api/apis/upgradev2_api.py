@@ -214,9 +214,7 @@ class Upgradev2Api:
             body=body_params,
         )
 
-    def get_upgrade_advisor_by_ontap_id(
-        self, id, level, ontap, **kwargs
-    ):  # noqa: E501
+    def get_upgrade_advisor_by_ontap_id(self, id, level, ontap, **kwargs):  # noqa: E501
         """Provides the risk summary for a specific ONTAP ID.  # noqa: E501
 
         Lists the risk summary for a specific customer/site/watchlist ID and for a specific ONTAP ID.  # noqa: E501

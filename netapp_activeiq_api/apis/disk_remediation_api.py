@@ -199,9 +199,7 @@ class DiskRemediationApi:
             body=body_params,
         )
 
-    def get_inventory(
-        self, context, search_id, search_type, **kwargs
-    ):  # noqa: E501
+    def get_inventory(self, context, search_id, search_type, **kwargs):  # noqa: E501
         """Provides inventory and playbook zip file to remediate disk/shelf/sp firmware risks.  # noqa: E501
 
         Returns the zip file containing inventory and playbook files for ONTAP Firmware Upgrades.   # noqa: E501
