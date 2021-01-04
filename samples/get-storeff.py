@@ -47,8 +47,7 @@ def clean_data(data, fields=None):
 
 if __name__ == "__main__":
 
-    # source
-    source = "https://aiq.netapp.com"
+    # source = "https://aiq.netapp.com"
     accesstoken = input("Enter Access Token: ")
     refreshtoken = input("Enter Refresh Token: ")
 
@@ -90,7 +89,7 @@ if __name__ == "__main__":
             # row variable is a dictionary that represents a row in csv
             sys_id = row["serial_number"]
             sl = aiq.StorageEfficiencyApi.get_efficiency_details_by_level(
-                source=source, level="serial_numbers", id=sys_id
+                level="serial_numbers", id=sys_id
             )
 
             pprint(sl)
@@ -135,7 +134,7 @@ if __name__ == "__main__":
             # row variable is a dictionary that represents a row in csv
             sys_id = row["clusterUUID"]
             sl = aiq.StorageEfficiencyApi.get_efficiency_details_by_level(
-                source=source, level="cluster", id=sys_id
+                level="cluster", id=sys_id
             )
 
             pprint(sl)

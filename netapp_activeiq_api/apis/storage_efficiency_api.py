@@ -15,9 +15,8 @@ class StorageEfficiencyApi:
         self, source, id, level, **kwargs
     ):  # noqa: E501
         """Provides information about system efficiency based on different parameters at the customer,site,group,cluster or system level.  # noqa: E501
-
         Provides information about system efficiency based on different parameters at the customer,site,group,cluster or system level.\"   # noqa: E501
-        :param str source: The source from where this service is being invoked. (required)
+        :param str source: The source from where this service is being invoked. 
         :param str id: Valid values are customer ID, site ID, group Name,serial Numbers and cluster ID. (required)
         :param str level: Valid values are customer, site, group, serial_numbers and cluster. (required)
         :param str aff: Specifies if the systems are AFF or NONAFF.
@@ -34,11 +33,6 @@ class StorageEfficiencyApi:
                 )
             params[key] = val
         del params["kwargs"]
-        # verify the required parameter 'source' is set
-        if "source" not in params or params["source"] is None:
-            raise ValueError(
-                "Missing the required parameter `source` when calling `get_efficiency_details_by_level`"
-            )  # noqa: E501
         # verify the required parameter 'id' is set
         if "id" not in params or params["id"] is None:
             raise ValueError(
