@@ -96,7 +96,7 @@ if __name__ == "__main__":
             # row variable is a dictionary that represents a row in csv
             sys_id = row["serial_number"]
             sl = aiq.StorageEfficiencyApi.get_efficiency_details_by_level(
-                level="serial_numbers", id=sys_id
+                level="serial_numbers", id=sys_id, source="laptop"
             )
             results = sl["results"]
             extra_data = {"serial_number": sys_id}
@@ -141,7 +141,7 @@ if __name__ == "__main__":
             # row variable is a dictionary that represents a row in csv
             sys_id = row["clusterUUID"]
             sl = aiq.StorageEfficiencyApi.get_efficiency_details_by_level(
-                level="cluster", id=sys_id
+                level="cluster", id=sys_id, source = 'laptop'
             )
 
             pprint(sl)
