@@ -79,8 +79,6 @@ if __name__ == "__main__":
             cust_id = row["customer_id"]
             sl = aiq.SystemApi.get_system_details_by_level(level="customer", id=cust_id)
             systems = sl["results"]
-            print(type(systems))
-            print(systems)
             extra_data = {"customer_id": cust_id}
             # systems.update(extra_data)  # add the customer id to the system
             systems = add_extra_data(systems, extra_data)  # add the customer id to the system

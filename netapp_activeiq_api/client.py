@@ -330,8 +330,9 @@ class ActiveIQClient:
                     post_params=post_params,
                     body=body,
                 )
-            elif response.status_code == 500:
+            elif response.status_code in (500,504) :
                 # Internal server error, try again.
+                # 504 Server Error: Gateway Time-out
                 if recursive > 0:
                     response = self.request(
                         url,
